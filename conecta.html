@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/x-icon" href="mais.png">
+<title>Conecta+</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #093C5D;
+    color: white;
+    text-align: center;
+}
+
+header {
+    padding: 30px 20px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #5DF8D8;
+}
+
+header p {
+    font-size: 1.2rem;
+    color: #6FD1D7;
+}
+
+.container {
+    display: grid;
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    background: #3B7597;
+    padding: 25px;
+    border-radius: 15px;
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+.card:hover {
+    background: #6FD1D7;
+    color: black;
+}
+
+.section {
+    display: none;
+    padding: 20px;
+}
+
+.active {
+    display: block;
+}
+
+.voltar {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #5DF8D8;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+ul {
+    text-align: left;
+    max-width: 400px;
+    margin: auto;
+}
+
+li {
+    margin: 10px 0;
+    font-size: 1.1rem;
+}
+
+img {
+    width: 90%;
+    max-width: 300px;
+    border-radius: 10px;
+    margin: 15px 0;
+}
+
+.fonte-grande {
+    font-size: 1.4rem;
+}
+
+.fonte-grande h1 {
+    font-size: 3rem;
+}
+
+.fonte-grande h2 {
+    font-size: 2rem;
+}
+
+.fonte-grande p, 
+.fonte-grande li, 
+.fonte-grande button {
+    font-size: 1.3rem;
+}
+
+.btn-voz {
+    margin: 10px;
+    padding: 10px 20px;
+    background: #5DF8D8;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+footer p {
+    margin: 10px 0;
+    font-size: 1.1rem;
+}
+
+footer button {
+    background: #5DF8D8;
+    color: #093C5D;
+    border: none;
+    border-radius: 12px;
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+footer button:hover {
+    background: #6FD1D7;
+    transform: scale(1.05);
+}
+</style>
+</head>
+
+<body>
+
+<button onclick="lerTexto()" class="btn-voz">
+    🔊 Ouvir conteúdo
+</button>
+
+<header>
+    <h1>Conecta+</h1>
+    <p>Aprenda a usar o celular de forma simples</p>
+</header>
+
+<button onclick="toggleFonte()" id="btnFonte" style="
+    margin-bottom: 15px;
+    padding: 10px 20px;
+    background: #5DF8D8;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;">
+    🔠 Aumentar Texto
+</button>
+
+<div class="container" id="menu">
+    <div class="card" onclick="mostrar('whatsapp')">📱 Usar WhatsApp</div>
+    <div class="card" onclick="mostrar('pix')">💰 Fazer Pix</div>
+    <div class="card" onclick="mostrar('golpes')">⚠️ Evitar golpes</div>
+    <div class="card" onclick="mostrar('servicos')">🌐 Serviços online</div>
+</div>
+
+<!-- WHATSAPP -->
+<div id="whatsapp" class="section">
+    <h2>Como usar o WhatsApp</h2>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
+    <ul>
+        <li>1. Abra o WhatsApp</li>
+        <li>2. Clique na conversa</li>
+        <li>3. Digite a mensagem</li>
+        <li>4. Clique na seta verde para enviar</li>
+    </ul>
+    <button class="voltar" onclick="voltar()">Voltar</button>
+</div>
+
+<!-- PIX -->
+<div id="pix" class="section">
+    <h2>Como fazer Pix</h2>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/d/de/Logo_-_pix_powered_by_Banco_Central_%28Brazil%2C_2020%29.png">
+    <ul>
+        <li>1. Abra o aplicativo do banco</li>
+        <li>2. Clique em "Pix"</li>
+        <li>3. Escolha a pessoa</li>
+        <li>4. Digite o valor</li>
+        <li>5. Confirme a operação</li>
+    </ul>
+    <p>✔ Sempre confira o nome antes de enviar</p>
+    <button class="voltar" onclick="voltar()">Voltar</button>
+</div>
+
+<!-- GOLPES -->
+<div id="golpes" class="section">
+    <h2>Como evitar golpes</h2>
+    <img src="https://cdn-icons-png.flaticon.com/512/565/565547.png">
+    <ul>
+        <li>❌ Não passe sua senha para ninguém</li>
+        <li>❌ Desconfie de mensagens urgentes</li>
+        <li>❌ Não clique em links desconhecidos</li>
+        <li>✔ Confirme com a pessoa antes</li>
+    </ul>
+    <button class="voltar" onclick="voltar()">Voltar</button>
+</div>
+
+<!-- SERVIÇOS -->
+<div id="servicos" class="section">
+    <h2>🌐 Como usar serviços do governo</h2>
+
+    <img src="https://cdn-icons-png.flaticon.com/512/2920/2920277.png">
+
+    <ul>
+        <li>1. Abra o navegador (Google Chrome)</li>
+        <li>2. Digite: www.gov.br</li>
+        <li>3. Clique em "Entrar"</li>
+        <li>4. Digite seu CPF e senha</li>
+        <li>5. Escolha o serviço desejado</li>
+    </ul>
+
+    <p><br><strong>✔ Você pode:</strong></p>
+    <ul>
+        <li>Consultar benefícios</li>
+        <li>Ver seu CPF</li>
+        <li>Agendar serviços</li>
+    </ul>
+
+    <button class="voltar" onclick="voltar()">Voltar</button>
+</div>
+
+<script>
+    // Função para mostrar a seção selecionada
+function mostrar(secao) {
+    document.getElementById("menu").style.display = "none";
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    document.getElementById(secao).classList.add('active');
+}
+
+function voltar() {
+    document.getElementById("menu").style.display = "grid";
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+}
+
+// Função para alternar o tamanho da fonte
+let fonteAtiva = false;
+
+function toggleFonte() {
+    fonteAtiva = !fonteAtiva;
+    document.body.classList.toggle("fonte-grande");
+
+    let botao = document.getElementById("btnFonte");
+
+    if (fonteAtiva) {
+        botao.innerText = "🔽 Diminuir Texto";
+    } else {
+        botao.innerText = "🔠 Aumentar Texto";
+    }
+}
+
+// Função para ler o texto em voz alta
+function lerTexto() {
+    let texto = document.querySelector('.section.active').innerText;
+
+    let fala = new SpeechSynthesisUtterance(texto);
+    fala.lang = "pt-BR";
+    fala.rate = 0.9; // velocidade (mais devagar)
+
+    speechSynthesis.cancel(); // evita sobreposição
+    speechSynthesis.speak(fala);
+}
+</script>
+
+<br>
+<hr style="width: 80%; border: 1px solid #5DF8D8; margin: 20px auto;">
+<br>
+
+<footer>
+    <p>Projeto de Extensão - Conecta+</p>
+    <a href="https://forms.gle/hJRH2kuvA7jRYYhe7" target="_blank">
+        <button>Participar do Projeto</button>
+    </a>
+</footer>
+</body>
+</html>
